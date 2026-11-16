@@ -1,0 +1,20 @@
+/* bell dropdown: shows the new notifications, then closes by itself after 5 seconds (no progress bar) */
+.notif-panel{max-height:min(70vh,420px);overflow-y:auto;}
+.notif-panel .notif-item{cursor:pointer;}
+.notif-all{display:block;width:100%;margin-top:10px;padding:8px 10px;border:1px solid var(--sage-pale);border-radius:10px;background:transparent;color:var(--forest-deep);font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;}
+.notif-all:hover{background:var(--sage-pale);}
+.notif-panel .notif-item.is-new{border-color:var(--gold);background:rgba(232,184,75,.12);}
+.notif-panel h4{margin:0 0 10px;}
+
+/* ---- green scrollbar (same thin pill as the sidebar) for the pop-up lists and scrolling cards ---- */
+.notif-panel,.avatar-menu,.search-panel,.modal,.rel-who-scroll,.table-panel{scrollbar-gutter:auto;}
+.notif-panel::-webkit-scrollbar,.avatar-menu::-webkit-scrollbar,.search-panel::-webkit-scrollbar,.modal::-webkit-scrollbar,.rel-who-scroll::-webkit-scrollbar,.table-panel::-webkit-scrollbar{width:6px;height:6px;}
+.notif-panel::-webkit-scrollbar-track,.avatar-menu::-webkit-scrollbar-track,.search-panel::-webkit-scrollbar-track,.modal::-webkit-scrollbar-track,.rel-who-scroll::-webkit-scrollbar-track,.table-panel::-webkit-scrollbar-track{background:transparent;margin:12px 0;}
+.notif-panel::-webkit-scrollbar-thumb,.avatar-menu::-webkit-scrollbar-thumb,.search-panel::-webkit-scrollbar-thumb,.modal::-webkit-scrollbar-thumb,.rel-who-scroll::-webkit-scrollbar-thumb,.table-panel::-webkit-scrollbar-thumb{background:var(--sage);border-radius:6px;}
+.notif-panel::-webkit-scrollbar-thumb:hover,.avatar-menu::-webkit-scrollbar-thumb:hover,.search-panel::-webkit-scrollbar-thumb:hover,.modal::-webkit-scrollbar-thumb:hover,.rel-who-scroll::-webkit-scrollbar-thumb:hover,.table-panel::-webkit-scrollbar-thumb:hover{background:var(--forest);}
+/* the little up / down arrow buttons are gone */
+.notif-panel::-webkit-scrollbar-button,.avatar-menu::-webkit-scrollbar-button,.search-panel::-webkit-scrollbar-button,.modal::-webkit-scrollbar-button,.rel-who-scroll::-webkit-scrollbar-button,.table-panel::-webkit-scrollbar-button{display:none;width:0;height:0;}
+/* Firefox has no ::-webkit-scrollbar; Chrome would let this override the rules above, so only Firefox gets it */
+@supports not selector(::-webkit-scrollbar){
+  .notif-panel,.avatar-menu,.search-panel,.modal,.rel-who-scroll,.table-panel{scrollbar-width:thin;scrollbar-color:var(--sage) transparent;}
+}
